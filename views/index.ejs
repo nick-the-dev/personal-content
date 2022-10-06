@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Personal Content App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Users list</h1>
+
+  <table>
+    <thead>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Url</th>
+    </thead>
+    <% for(var i=0; i<users.length; i++) {%>
+      <tr>
+        <td><%= users[i].username %></td>
+        <td><%= users[i].password %></td>
+        <td><%= users[i].url %></td>
+      </tr>
+    <% } %>
+  </table>
+
+  <h2>Add user</h2>
+
+  <form action="/users" method="POST">
+    <input type="text" placeholder="name" name="username">
+    <input type="password" placeholder="password" name="password">
+    <input type="text" placeholder="url" name="url">
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- <div>
+    <h2>Replace last quote written by Master Yoda with a quote written by Darth Vadar</h2>
+    <button id="update"> Darth Vadar invades! </button>
+  </div>
+
+  <div>
+    <h2>Delete Darth Vadar's first quote</h2>
+    <button id="delete"> Delete first Darth Vadar quote </button>
+  </div> -->
+
+  <script src="main.js"></script>
+
+</body>
+</html>
